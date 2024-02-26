@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  api-nest-graphql:
+    image: node:21.6.2-slim
+    container_name: api-nest-graphql
+    working_dir: /app
+    # command: npm run start
+    command: npm run start:dev
+    # command: npm run test:watch
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000

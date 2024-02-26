@@ -71,3 +71,9 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## Tec to use
+
+kafka, redis, or rabbitMQ - to use as messaging
+mongo - to use as no relational database
+kubernetes - to use as container manager 
