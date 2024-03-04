@@ -1,20 +1,20 @@
-import { Resolver, Query, Args } from '@nestjs/graphql';
-import { UserWhereInput } from 'src/@generated/user/user-where.input';
-import { User } from 'src/@generated/user/user.model';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { Resolver, Query, Args } from '@nestjs/graphql'
+import { UserWhereInput } from '../@generated/user/user-where.input'
+import { User } from '../@generated/user/user.model'
+import { PrismaService } from '../prisma/prisma.service'
 
 @Resolver(() => User)
 export class UserResolver {
   constructor(private prisma: PrismaService) {}
 
   @Query(() => String)
-  exemplo(): string {
-    return 'Olá, Mundo!';
+  exemplo(@Args('name', { nullable: true }) name?: string): string {
+    return `Olá, ${name ?? 'Mundo'}!`
   }
 
   @Query(() => [User])
   async user(@Args('where') where: UserWhereInput) {
-    return this.prisma.user.findMany({ where }) || [];
+    return this.prisma.user.findMany({ where }) || []
   }
 
   //   @ResolveField()

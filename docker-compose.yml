@@ -6,8 +6,7 @@ services:
     container_name: api-nest-graphql
     working_dir: /app
     # command: npm run start
-    command: npm run start:dev
-    # command: npm run test:watch
+    command: tail -f /dev/null
     volumes:
       - .:/app
     ports:

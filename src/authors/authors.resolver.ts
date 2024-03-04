@@ -1,4 +1,4 @@
-import { Resolver, Query } from '@nestjs/graphql';
+import { Resolver, Query } from '@nestjs/graphql'
 
 @Resolver()
 export class AuthorsResolver {
@@ -6,7 +6,7 @@ export class AuthorsResolver {
 
   @Query(() => String)
   exemplo(): string {
-    return 'Olá, Mundo!';
+    return 'Olá, Mundo!'
   }
 
   //   @Query((returns) => Author)
